@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneClients));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSuivant = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.grpSatisfaction = new System.Windows.Forms.GroupBox();
             this.rtbComment = new System.Windows.Forms.RichTextBox();
@@ -43,12 +43,8 @@
             this.btnUnhappy = new System.Windows.Forms.Button();
             this.btnHappy = new System.Windows.Forms.Button();
             this.grbConversation = new System.Windows.Forms.GroupBox();
-            this.lblNomEntreprise = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblCnv2 = new System.Windows.Forms.Label();
-            this.lblNomClient = new System.Windows.Forms.Label();
-            this.lblCnv1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.txtText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.grpSatisfaction.SuspendLayout();
             this.grbConversation.SuspendLayout();
@@ -56,39 +52,41 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnSuivant);
+            this.panel1.Controls.Add(this.btnNext);
             this.panel1.Controls.Add(this.btnPause);
             this.panel1.Controls.Add(this.grpSatisfaction);
             this.panel1.Controls.Add(this.grbConversation);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(621, 623);
+            this.panel1.Size = new System.Drawing.Size(621, 625);
             this.panel1.TabIndex = 0;
             // 
-            // btnSuivant
+            // btnNext
             // 
-            this.btnSuivant.BackColor = System.Drawing.Color.White;
-            this.btnSuivant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuivant.Location = new System.Drawing.Point(111, 536);
-            this.btnSuivant.Name = "btnSuivant";
-            this.btnSuivant.Size = new System.Drawing.Size(482, 63);
-            this.btnSuivant.TabIndex = 4;
-            this.btnSuivant.Text = "Next client";
-            this.btnSuivant.UseVisualStyleBackColor = false;
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(111, 536);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(482, 63);
+            this.btnNext.TabIndex = 5;
+            this.btnNext.Text = "Next client";
+            this.btnNext.UseVisualStyleBackColor = false;
             // 
             // btnPause
             // 
             this.btnPause.BackColor = System.Drawing.Color.White;
+            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
             this.btnPause.Location = new System.Drawing.Point(30, 536);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(63, 63);
-            this.btnPause.TabIndex = 3;
+            this.btnPause.TabIndex = 6;
             this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // grpSatisfaction
             // 
@@ -110,10 +108,11 @@
             // 
             // rtbComment
             // 
+            this.rtbComment.Enabled = false;
             this.rtbComment.Location = new System.Drawing.Point(10, 178);
             this.rtbComment.Name = "rtbComment";
             this.rtbComment.Size = new System.Drawing.Size(563, 120);
-            this.rtbComment.TabIndex = 8;
+            this.rtbComment.TabIndex = 7;
             this.rtbComment.Text = "";
             // 
             // lblF4
@@ -161,8 +160,9 @@
             this.btnNoAnswer.Location = new System.Drawing.Point(447, 19);
             this.btnNoAnswer.Name = "btnNoAnswer";
             this.btnNoAnswer.Size = new System.Drawing.Size(127, 127);
-            this.btnNoAnswer.TabIndex = 3;
+            this.btnNoAnswer.TabIndex = 4;
             this.btnNoAnswer.UseVisualStyleBackColor = false;
+            this.btnNoAnswer.Click += new System.EventHandler(this.btnSelected);
             // 
             // btnNeutral
             // 
@@ -173,8 +173,9 @@
             this.btnNeutral.Location = new System.Drawing.Point(301, 20);
             this.btnNeutral.Name = "btnNeutral";
             this.btnNeutral.Size = new System.Drawing.Size(127, 127);
-            this.btnNeutral.TabIndex = 2;
+            this.btnNeutral.TabIndex = 3;
             this.btnNeutral.UseVisualStyleBackColor = false;
+            this.btnNeutral.Click += new System.EventHandler(this.btnSelected);
             // 
             // btnUnhappy
             // 
@@ -185,8 +186,9 @@
             this.btnUnhappy.Location = new System.Drawing.Point(154, 20);
             this.btnUnhappy.Name = "btnUnhappy";
             this.btnUnhappy.Size = new System.Drawing.Size(127, 127);
-            this.btnUnhappy.TabIndex = 1;
+            this.btnUnhappy.TabIndex = 2;
             this.btnUnhappy.UseVisualStyleBackColor = false;
+            this.btnUnhappy.Click += new System.EventHandler(this.btnUnhappy_Click);
             // 
             // btnHappy
             // 
@@ -197,70 +199,19 @@
             this.btnHappy.Location = new System.Drawing.Point(7, 20);
             this.btnHappy.Name = "btnHappy";
             this.btnHappy.Size = new System.Drawing.Size(127, 127);
-            this.btnHappy.TabIndex = 0;
+            this.btnHappy.TabIndex = 1;
             this.btnHappy.UseVisualStyleBackColor = false;
+            this.btnHappy.Click += new System.EventHandler(this.btnSelected);
             // 
             // grbConversation
             // 
-            this.grbConversation.Controls.Add(this.lblNomEntreprise);
-            this.grbConversation.Controls.Add(this.label1);
-            this.grbConversation.Controls.Add(this.lblCnv2);
-            this.grbConversation.Controls.Add(this.lblNomClient);
-            this.grbConversation.Controls.Add(this.lblCnv1);
+            this.grbConversation.Controls.Add(this.txtText);
             this.grbConversation.Location = new System.Drawing.Point(20, 66);
             this.grbConversation.Name = "grbConversation";
             this.grbConversation.Size = new System.Drawing.Size(584, 134);
             this.grbConversation.TabIndex = 1;
             this.grbConversation.TabStop = false;
             this.grbConversation.Text = "Conversation avec le consommateur";
-            // 
-            // lblNomEntreprise
-            // 
-            this.lblNomEntreprise.AutoSize = true;
-            this.lblNomEntreprise.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomEntreprise.Location = new System.Drawing.Point(180, 60);
-            this.lblNomEntreprise.Name = "lblNomEntreprise";
-            this.lblNomEntreprise.Size = new System.Drawing.Size(0, 18);
-            this.lblNomEntreprise.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "de votre achat chez";
-            // 
-            // lblCnv2
-            // 
-            this.lblCnv2.AutoSize = true;
-            this.lblCnv2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCnv2.Location = new System.Drawing.Point(7, 38);
-            this.lblCnv2.Name = "lblCnv2";
-            this.lblCnv2.Size = new System.Drawing.Size(567, 18);
-            this.lblCnv2.TabIndex = 2;
-            this.lblCnv2.Text = "J\'appel de la part de Baboubine pour effectuer un sondage à propos";
-            // 
-            // lblNomClient
-            // 
-            this.lblNomClient.AutoSize = true;
-            this.lblNomClient.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomClient.Location = new System.Drawing.Point(99, 20);
-            this.lblNomClient.Name = "lblNomClient";
-            this.lblNomClient.Size = new System.Drawing.Size(0, 18);
-            this.lblNomClient.TabIndex = 1;
-            // 
-            // lblCnv1
-            // 
-            this.lblCnv1.AutoSize = true;
-            this.lblCnv1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCnv1.Location = new System.Drawing.Point(7, 20);
-            this.lblCnv1.Name = "lblCnv1";
-            this.lblCnv1.Size = new System.Drawing.Size(96, 18);
-            this.lblCnv1.TabIndex = 0;
-            this.lblCnv1.Text = "Bonjour M.";
             // 
             // lblTitle
             // 
@@ -272,6 +223,17 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "{nom du client}";
             // 
+            // txtText
+            // 
+            this.txtText.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtText.Location = new System.Drawing.Point(7, 20);
+            this.txtText.Multiline = true;
+            this.txtText.Name = "txtText";
+            this.txtText.ReadOnly = true;
+            this.txtText.Size = new System.Drawing.Size(566, 100);
+            this.txtText.TabIndex = 0;
+            this.txtText.TabStop = false;
+            // 
             // PhoneClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,9 +241,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(645, 649);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(661, 688);
             this.Name = "PhoneClients";
             this.Text = "{nom du client}";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.grpSatisfaction.ResumeLayout(false);
@@ -296,17 +260,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox grbConversation;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCnv2;
-        private System.Windows.Forms.Label lblNomClient;
-        private System.Windows.Forms.Label lblCnv1;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblNomEntreprise;
         private System.Windows.Forms.GroupBox grpSatisfaction;
         private System.Windows.Forms.Button btnUnhappy;
         private System.Windows.Forms.Button btnHappy;
         private System.Windows.Forms.Button btnNeutral;
-        private System.Windows.Forms.Button btnSuivant;
+        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.RichTextBox rtbComment;
         private System.Windows.Forms.Label lblF4;
@@ -314,6 +273,7 @@
         private System.Windows.Forms.Label lblF2;
         private System.Windows.Forms.Label lblF1;
         private System.Windows.Forms.Button btnNoAnswer;
+        private System.Windows.Forms.TextBox txtText;
     }
 }
 
