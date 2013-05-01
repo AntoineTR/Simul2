@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace eq6_Simulation2
 {
-    public partial class Form1 : Form
+    public partial class PhoneClients : Form
     {
-        public Form1()
+        public PhoneClients()
         {
             InitializeComponent();
         }
