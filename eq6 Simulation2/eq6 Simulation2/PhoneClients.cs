@@ -18,8 +18,17 @@ namespace eq6_Simulation2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblNomClient.Text = "Crevier";
-            lblNomEntreprise.Text = "BMW";
+            txtConv.Text = "Bonjour Monsieur Tremblay, "
+                + "Je suis Monsieur Crevier, je travaille pour la firme de sondage Baboubine." +
+                "Aimeriez-vous participer à un concours afin de courir la chance de gagner une Porsche ?" +
+                "Pour participer il ne suffit que de 3 minutes de votre temps pour effectuer un court sondage sur votre achat de canapé chez Brault et Martineau. "+
+                "Êtes-vous satisfait du produit acheté?";
+            
+        }
+
+        private void grbConversation_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
