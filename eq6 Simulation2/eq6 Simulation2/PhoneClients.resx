@@ -391,15 +391,7 @@
   <data name="btnUnhappy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-<<<<<<< HEAD
-<<<<<<< HEAD
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAADEZSURBVHhe7Z0HmFRV8vbXdd34
-=======
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAADEZSURBVHhe7Z0HmFRV8vbXdd34
->>>>>>> Added CallsListToBegin
-=======
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAADEZSURBVHhe7Z0HmFRV8vbXdd34
->>>>>>> le commit a fred
         bfg26q66u+qCYMacEFSUoJiQnAQkZxMmEFEUEREwkcEEiAgqqCgqBjAgioCoxCEOQXIOQ/3fX92+Q0/T
         M9090zPEeZ7zDEzfvufeU++pXHV+ZmY/OzwO3TU4TPxDfAMcBsBhABy67O+w6LOfOQe445oSB8v4jd7l
         HxonaJTVaKLxsMZwjQ80pmis0NihsS2XsV1/36Txo8ZHGq9odNNopnGhxnEaf9Y46mBYtwMdAD8XEY7R
@@ -614,16 +606,8 @@
   </data>
   <data name="btnHappy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-<<<<<<< HEAD
-<<<<<<< HEAD
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAADCuSURBVHhe7Z0HeFRl1se36u7n
-=======
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAADCuSURBVHhe7Z0HeFRl1se36u7n
->>>>>>> Added CallsListToBegin
-=======
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1       
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAADCuSURBVHhe7Z0HeFRl1se36u7n
->>>>>>> le commit a fred
         7rrVre66NmAtKFZ0VVRUFESqIkUEpYP0soBIEwFFEcFVmqD03kSKjSYoCIsgvYQWEnrveL7/771zw2Qy
         k9wJSQiSPM95BpI7c++85/+efs77AzP7QR5duGuQx/wLfAPkASAPABeu+MtTffYDJwGalyhwvtMP9R1+
         JLpE9AfRFaIiojqiLqKRolmiRaJk0SnR8Rh0IvT7zXqdLxohelVUV3SX6O+i34kuEnHf83rtzmcAsPgw

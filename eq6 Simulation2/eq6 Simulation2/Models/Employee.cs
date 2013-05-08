@@ -6,8 +6,8 @@ using LUJR.Helpers;
 
 namespace eq6_Simulation2.Models
 {
-    [PetaPoco.TableName("Employee.Employee")]
-    [PetaPoco.PrimaryKey("ID")]
+    [TableName("Employee.Employee")]
+    [PrimaryKey("ID")]
     public class Employee: EntityWithDatabase
     {
         public Employee() : base() { }

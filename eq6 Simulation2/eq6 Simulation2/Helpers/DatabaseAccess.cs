@@ -11,7 +11,7 @@ namespace LUJR.Helpers
     {
         #region Attributs
 
-        protected string mConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        protected string mConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["defaut"].ConnectionString;
         protected SqlConnection mConnection;
         protected SqlCommand mCommand;
 
