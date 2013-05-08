@@ -26,6 +26,8 @@ namespace eq6_Simulation2
 
         private void Form_Load(object sender, EventArgs e)
         {
+             
+
             txtText.Text = "Bonjour Monsieur Tremblay, "
                 + "Je suis Monsieur Crevier, je travaille pour la firme de sondage Baboubine. " +
                 "Aimeriez-vous participer à un concours afin de courir la chance de gagner une Porsche ? " + 
@@ -33,6 +35,7 @@ namespace eq6_Simulation2
                 "Êtes-vous satisfait du produit acheté?";
             lblTitle.Text = "Jean Tremblay - 1 (514) 123-4567";
             this.Text = "Jean Tremblay";
+            rtbComment.Text = "Commentaires...";
             rtbComment.BackColor = Color.Gainsboro;
             btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\pause.png");
             btnHappy.Focus();
@@ -43,6 +46,8 @@ namespace eq6_Simulation2
             rtbComment.Enabled = true;
             rtbComment.BackColor = Color.White;
             rtbComment.Focus();
+
+            rtbComment.Text = ""; 
         }
 
         private void btnSelected(object sender, EventArgs e)

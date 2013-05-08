@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallsListToBegin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallsListToBegin.Designer.cs">
+      <DependentUpon>CallsListToBegin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="PhoneClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +65,9 @@
     <Compile Include="Helpers\PetaPocoDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CallsListToBegin.resx">
+      <DependentUpon>CallsListToBegin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhoneClients.resx">
       <DependentUpon>PhoneClients.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,9 +92,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\happy.png" />
     <Content Include="Images\neutral.png" />
