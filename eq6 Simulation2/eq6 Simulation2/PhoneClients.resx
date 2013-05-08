@@ -121,11 +121,7 @@
   <data name="btnPause.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-<<<<<<< HEAD
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAALJSURBVHhe7dnBTcNgEAVhdwIS
-=======
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAALJSURBVHhe7dnBTcNgEAVhdwIS
->>>>>>> Added CallsListToBegin
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAALJSURBVHhe7dnBTcNgEAVhdwIS
         jVEKJVASnZlY4oAiLs44rCV/h/+YxHF235uMl3VdF+e698CPf/EFMAAG4Lrxp/rWRQJIAAlw5SSQABKg
         J8Dby+vX7awnONt1LE8+Z/ie2zV8HJFchySAARgZfgPwR+JIgJ2VJgH2V4YKuO8eFaACQOD/QzAGwAD9
         HxwGwAB9ijAABsAAGGBkC+7/kvEAPAAVvEcRg0AQCAJ3PjxiApnAU/AOEUQE9fTGABigTxERNFIJKkAF
@@ -143,11 +139,7 @@
   <data name="btnNoAnswer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-<<<<<<< HEAD
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABM3SURBVHhe7Z15jF1VHccHkZ3a
-=======
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABM3SURBVHhe7Z15jF1VHccHkZ3a
->>>>>>> Added CallsListToBegin
         QkFA2k6nC7IEQdEgJmyJNCpukSiLCgil4AaFFhAFJOAGhIgxigSNqEExLEGJGlOJUFAQkKUYEUEhkT9Q
         9qVl7/P7Gd4Z7ty5776z3/um88cvnc7cd9979/s9v+V7fuecoU6nMzRl6+4zmAJ/HR8AUwSYIsC66/6m
         Ql9naIIHmD88dyiyvUn320K2ceT7xv6cY/fbTs/g0DkjQ51ZC4YeHxzbQJ91D9lWvT5zFeFTEmAzAX6o
@@ -236,11 +228,7 @@
   <data name="btnNeutral.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-<<<<<<< HEAD
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAACS9SURBVHhe7V0HeBTV2rbX3371
-=======
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAACS9SURBVHhe7V0HeBTV2rbX3371
->>>>>>> Added CallsListToBegin
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAACS9SURBVHhe7V0HeBTV2rbX3371
         //Xe/9d7sVBERYroVbhyBUGlSBGkSleUjoBIEUEBQeVSLEDoRaoFUFBIUGkqYg0dSQKEElOAEAgp3/++
         Z2aWyWR2d2azu0nY3ec5T8rOzDlzvvd85+vnPBE5L9oidw6ixI/wBRAFQBQAkcv+olufnKc4wMtPlTtX
         2hV4l5vQbkOrgfY82pto89G+RtuEdgTttIP2O675Bm0x2ii0bmjV0P6Gdj3axefCvJ0LALhFJ0wn/JyN
@@ -404,10 +392,14 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
 <<<<<<< HEAD
+<<<<<<< HEAD
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAADEZSURBVHhe7Z0HmFRV8vbXdd34
 =======
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAADEZSURBVHhe7Z0HmFRV8vbXdd34
 >>>>>>> Added CallsListToBegin
+=======
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAADEZSURBVHhe7Z0HmFRV8vbXdd34
+>>>>>>> le commit a fred
         bfg26q66u+qCYMacEFSUoJiQnAQkZxMmEFEUEREwkcEEiAgqqCgqBjAgioCoxCEOQXIOQ/3fX92+Q0/T
         M9090zPEeZ7zDEzfvufeU++pXHV+ZmY/OzwO3TU4TPxDfAMcBsBhABy67O+w6LOfOQe445oSB8v4jd7l
         HxonaJTVaKLxsMZwjQ80pmis0NihsS2XsV1/36Txo8ZHGq9odNNopnGhxnEaf9Y46mBYtwMdAD8XEY7R
@@ -624,10 +616,14 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
 <<<<<<< HEAD
+<<<<<<< HEAD
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAADCuSURBVHhe7Z0HeFRl1se36u7n
 =======
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAADCuSURBVHhe7Z0HeFRl1se36u7n
 >>>>>>> Added CallsListToBegin
+=======
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAADCuSURBVHhe7Z0HeFRl1se36u7n
+>>>>>>> le commit a fred
         7rrVre66NmAtKFZ0VVRUFESqIkUEpYP0soBIEwFFEcFVmqD03kSKjSYoCIsgvYQWEnrveL7/771zw2Qy
         k9wJSQiSPM95BpI7c++85/+efs77AzP7QR5duGuQx/wLfAPkASAPABeu+MtTffYDJwGalyhwvtMP9R1+
         JLpE9AfRFaIiojqiLqKRolmiRaJk0SnR8Rh0IvT7zXqdLxohelVUV3SX6O+i34kuEnHf83rtzmcAsPgw

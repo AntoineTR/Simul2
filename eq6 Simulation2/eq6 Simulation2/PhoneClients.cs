@@ -80,5 +80,13 @@ namespace eq6_Simulation2
             lblTimer.Text = String.Format("{0:00}", i / 60) + ":" + String.Format("{0:00}", i % 60);
         }
 
+        private void btnHappy_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                int dfsdf = 34;
+            }
+        }
+
     }
 }

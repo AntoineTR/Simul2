@@ -226,6 +226,7 @@
             this.btnHappy.TabIndex = 1;
             this.btnHappy.UseVisualStyleBackColor = false;
             this.btnHappy.Click += new System.EventHandler(this.btnSelected);
+            this.btnHappy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnHappy_KeyUp);
             // 
             // grbConversation
             // 
