@@ -101,19 +101,20 @@ namespace LUJR.Helpers
         public SqlDataReader GetReader()
         {
             SqlDataReader tReader;
-            try
-            {
+            /*try
+            {*/
                 mConnection.Open();
                 tReader = mCommand.ExecuteReader();
-            }
+            /*}
             catch (ApplicationException ex)
             {
+                Dispose();
                 throw new Exceptions.DatabaseAccessException(ex.Message);
             }
             finally
             {
-                //mConnection.Close();
-            }
+                //Dispose();
+            }*/
             return tReader;
         }
 
@@ -125,19 +126,19 @@ namespace LUJR.Helpers
         /// </summary>
         public void Execute() 
         {
-            try
-            {
+            /*try
+            {*/
                 mConnection.Open();
                 mCommand.ExecuteNonQuery();
-            }
+            /*}
             catch (ApplicationException ex)
             {
                 throw new Exceptions.DatabaseAccessException(ex.Message);
             }
             finally
             {
-                mConnection.Close();
-            }
+                Dispose();
+            }*/
         }
         public void DoDelete() 
         {

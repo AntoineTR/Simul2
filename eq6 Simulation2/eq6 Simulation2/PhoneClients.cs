@@ -23,12 +23,14 @@ namespace eq6_Simulation2
         private Employee mEmployee;
         private string mEmployeeName;
         private int mCurrentCallID;
+        private int mLastAnswerClicked = 0;
         #endregion
 
         #region Initialize + Constructor
         private void Form_Load(object sender, EventArgs e)
         {
             // Start timer
+            mPaused = false;
             tmrCall.Start();
             tick();
             // Start calling
@@ -86,13 +88,37 @@ namespace eq6_Simulation2
             mCallTimer += 1;
             lblTimer.Text = String.Format("{0:00}", mCallTimer / 60) + ":" + String.Format("{0:00}", mCallTimer % 60);
         }
+        public void saveCall() 
+        {
+            DatabaseAccess tDA = new DatabaseAccess("[Survey].[SaveCall]");
+            tDA.AddParam("@CallID", mCurrentCallID);
+            tDA.AddParam("@AnswerID", mLastAnswerClicked);
+            tDA.AddParam("@CallLength", mCallTimer);
+            tDA.AddParam("@Comments", rtbComment.Text.Trim());
+            
+            tDA.Execute();
+
+            tDA.Dispose();
+
+            mCallTimer = 0;
+            ClearFlat();
+        }
         public void nextCall() 
         {
             DatabaseAccess tDA = new DatabaseAccess("[Survey].[NextCall]");
             tDA.AddParam("@EmpID", mEmployee.ID);
-            SqlDataReader r = tDA.GetReader();
+            
+            SqlDataReader r;
+            try
+            {
+                r = tDA.GetReader();
+            }
+            catch (SqlException ex)
+            {
+                r = null;
+            }
 
-            if (r.Read())
+            if (r != null && r.Read())
             {
                 mCurrentCallID = (int)r["CallID"];
 
@@ -101,22 +127,36 @@ namespace eq6_Simulation2
                     "Aimeriez-vous participer à un concours afin de courir la chance de gagner une Porsche? " +
                     "Pour participer il ne suffit que de 3 minutes de votre temps pour effectuer un court sondage sur votre achat de " + r["ItemBought"] + " chez " + r["Company"] + ". " +
                     "Êtes-vous satisfait du produit acheté?";
-                lblTitle.Text = r["NameClient"] + " - 1 (514) 123-4567";
+                lblTitle.Text = r["NameClient"] + " - " + r["Phone"];
                 this.Text = (string)r["NameClient"];
                 rtbComment.Text = "Commentaires...";
                 rtbComment.BackColor = Color.Gainsboro;
-                mPaused = false;
                 btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\pause.png");
                 btnHappy.Focus();
             }
             else 
             {
-                MessageBox.Show("Fini", "Tous les appels a effectuer ont été faits!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblTitle.Text = "";
+                rtbComment.Text = "";
+                txtText.Text = "";
+                MessageBox.Show("Tous les appels a effectuer ont été faits!", "Fini", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
             }
+            tDA.Dispose();
         }
         #endregion
 
         #region Events
+        private void btnHappy_Click(object sender, EventArgs e)
+        {
+            rtbComment.Enabled = false;
+            rtbComment.BackColor = Color.Gainsboro;
+            btnNext.Focus();
+            ClearFlat();
+            btnHappy.FlatAppearance.BorderColor = Color.DarkBlue;
+            btnHappy.FlatAppearance.BorderSize = 3;
+            mLastAnswerClicked = 1;
+        }
         private void btnUnhappy_Click(object sender, EventArgs e)
         {
             rtbComment.Enabled = true;
@@ -124,18 +164,40 @@ namespace eq6_Simulation2
             rtbComment.Focus();
             ClearFlat();
                 btnUnhappy.FlatAppearance.BorderColor = Color.DarkBlue;
-                btnUnhappy.FlatAppearance.BorderSize = 2;
-            rtbComment.Text = ""; 
+                btnUnhappy.FlatAppearance.BorderSize = 3;
+            rtbComment.Text = "";
+            mLastAnswerClicked = 2;
         }
-        private void btnSelected(object sender, EventArgs e)
+        private void btnNeutral_Click(object sender, EventArgs e)
         {
             rtbComment.Enabled = false;
             rtbComment.BackColor = Color.Gainsboro;
             btnNext.Focus();
-            
+
             ClearFlat();
             btnNeutral.FlatAppearance.BorderColor = Color.DarkBlue;
-            btnNeutral.FlatAppearance.BorderSize = 2;
+            btnNeutral.FlatAppearance.BorderSize = 3;
+            mLastAnswerClicked = 3;
+        }
+        private void btnNoAnswer_Click(object sender, EventArgs e)
+        {
+            rtbComment.Enabled = false;
+            rtbComment.BackColor = Color.Gainsboro;
+            btnNext.Focus();
+            ClearFlat();
+            btnNoAnswer.FlatAppearance.BorderColor = Color.DarkBlue;
+            btnNoAnswer.FlatAppearance.BorderSize = 3;
+            mLastAnswerClicked = 4;
+        }
+
+        private void btns_KeyUp(object sender, KeyEventArgs e)
+        {
+            MapFsUP(e);    
+        }
+        
+        private void PhoneClients_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.Close();
         }
         private void btnPause_Click(object sender, EventArgs e)
         {
@@ -146,42 +208,26 @@ namespace eq6_Simulation2
                 tmrCall.Start();
                 btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\pause.png");
             }
-            else 
+            else
             {
                 mPaused = true;
                 tmrCall.Stop();
-                btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\play.png");            
+                btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\play.png");
             }
         }
         private void tmrAppel_Tick(object sender, EventArgs e)
         {
             tick();
         }
-        private void btnHappy_KeyUp(object sender, KeyEventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            MapFsUP(e);    
-        }
-        private void btnNoAnswer_Click(object sender, EventArgs e)
-        {
-            rtbComment.Enabled = false;
-            rtbComment.BackColor = Color.Gainsboro;
-            btnNext.Focus();
-            ClearFlat();
-            btnNoAnswer.FlatAppearance.BorderColor = Color.DarkBlue;
-            btnNoAnswer.FlatAppearance.BorderSize = 2;
-        }
-        private void btnHappy_Click(object sender, EventArgs e)
-        {
-            rtbComment.Enabled = false;
-            rtbComment.BackColor = Color.Gainsboro;
-            btnNext.Focus();
-            ClearFlat();
-            btnHappy.FlatAppearance.BorderColor = Color.DarkBlue;
-            btnHappy.FlatAppearance.BorderSize = 2;
-        }
-        private void PhoneClients_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //this.Close();
+            if (mLastAnswerClicked == 0)
+            {
+                MessageBox.Show("Vous devez sélectionner une réponse", "Aucune réponse choisie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            saveCall();
+            nextCall();
         }
         #endregion Events
     }

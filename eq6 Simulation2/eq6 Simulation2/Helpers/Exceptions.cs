@@ -5,10 +5,15 @@ using System.Text;
 
 namespace LUJR.Helpers.Exceptions
 {
-    class DatabaseAccessException : Exception
+    public class DatabaseAccessException : System.ApplicationException
     {
+        public DatabaseAccessException() { }
+        public DatabaseAccessException(string message) { }
+        public DatabaseAccessException(string message, System.Exception inner) { }
 
-        public DatabaseAccessException(string pMess) : base(pMess) { }
-
+        // Constructor needed for serialization 
+        // when exception propagates from a remoting server to the client.
+        protected DatabaseAccessException(System.Runtime.Serialization.SerializationInfo info,
+            System.Runtime.Serialization.StreamingContext context) { }
     }
 }

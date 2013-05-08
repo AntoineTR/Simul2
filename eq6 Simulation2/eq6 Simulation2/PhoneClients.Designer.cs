@@ -99,6 +99,7 @@
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = "Next client";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPause
             // 
@@ -187,6 +188,7 @@
             this.btnNoAnswer.TabIndex = 4;
             this.btnNoAnswer.UseVisualStyleBackColor = false;
             this.btnNoAnswer.Click += new System.EventHandler(this.btnNoAnswer_Click);
+            this.btnNoAnswer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btns_KeyUp);
             // 
             // btnNeutral
             // 
@@ -199,7 +201,8 @@
             this.btnNeutral.Size = new System.Drawing.Size(127, 127);
             this.btnNeutral.TabIndex = 3;
             this.btnNeutral.UseVisualStyleBackColor = false;
-            this.btnNeutral.Click += new System.EventHandler(this.btnSelected);
+            this.btnNeutral.Click += new System.EventHandler(this.btnNeutral_Click);
+            this.btnNeutral.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btns_KeyUp);
             // 
             // btnUnhappy
             // 
@@ -213,6 +216,7 @@
             this.btnUnhappy.TabIndex = 2;
             this.btnUnhappy.UseVisualStyleBackColor = false;
             this.btnUnhappy.Click += new System.EventHandler(this.btnUnhappy_Click);
+            this.btnUnhappy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btns_KeyUp);
             // 
             // btnHappy
             // 
@@ -226,7 +230,7 @@
             this.btnHappy.TabIndex = 1;
             this.btnHappy.UseVisualStyleBackColor = false;
             this.btnHappy.Click += new System.EventHandler(this.btnHappy_Click);
-            this.btnHappy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnHappy_KeyUp);
+            this.btnHappy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btns_KeyUp);
             // 
             // grbConversation
             // 
