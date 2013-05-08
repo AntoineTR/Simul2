@@ -66,6 +66,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Survey.cs" />
     <Compile Include="PhoneClients.cs">
       <SubType>Form</SubType>
     </Compile>

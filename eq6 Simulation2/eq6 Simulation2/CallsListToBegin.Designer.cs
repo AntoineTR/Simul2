@@ -28,53 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lsvSurveys = new System.Windows.Forms.ListView();
             this.Compagnie = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateDebut = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateFin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.NbClients = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBeginCalls = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // lsvSurveys
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lsvSurveys.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Compagnie,
             this.DateDebut,
-            this.DateFin,
-            this.NbClients});
-            this.listView1.Location = new System.Drawing.Point(14, 24);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(575, 432);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.DateFin});
+            this.lsvSurveys.Enabled = false;
+            this.lsvSurveys.Location = new System.Drawing.Point(14, 24);
+            this.lsvSurveys.Name = "lsvSurveys";
+            this.lsvSurveys.Size = new System.Drawing.Size(575, 432);
+            this.lsvSurveys.TabIndex = 0;
+            this.lsvSurveys.UseCompatibleStateImageBehavior = false;
+            this.lsvSurveys.View = System.Windows.Forms.View.Details;
             // 
             // Compagnie
             // 
             this.Compagnie.Text = "Compagnie";
-            this.Compagnie.Width = 196;
+            this.Compagnie.Width = 266;
             // 
             // DateDebut
             // 
             this.DateDebut.Text = "Date Début";
-            this.DateDebut.Width = 104;
+            this.DateDebut.Width = 156;
             // 
             // DateFin
             // 
             this.DateFin.Text = "Date Fin";
-            this.DateFin.Width = 91;
-            // 
-            // NbClients
-            // 
-            this.NbClients.Text = "Nombre de clients à appeler";
-            this.NbClients.Width = 180;
+            this.DateFin.Width = 148;
             // 
             // lblTitle
             // 
@@ -89,7 +83,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.lsvSurveys);
             this.groupBox1.Location = new System.Drawing.Point(14, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(598, 474);
@@ -110,23 +104,24 @@
             this.btnBeginCalls.UseVisualStyleBackColor = false;
             this.btnBeginCalls.Click += new System.EventHandler(this.btnBeginCalls_Click);
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 559);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 56);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Quitter";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(14, 559);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(163, 56);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Quitter";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnBeginCalls);
             this.panel1.Controls.Add(this.lblTitle);
@@ -155,15 +150,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lsvSurveys;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColumnHeader Compagnie;
         private System.Windows.Forms.ColumnHeader DateDebut;
         private System.Windows.Forms.ColumnHeader DateFin;
-        private System.Windows.Forms.ColumnHeader NbClients;
         private System.Windows.Forms.Button btnBeginCalls;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel panel1;
     }
 }
