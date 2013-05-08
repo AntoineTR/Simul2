@@ -19,16 +19,36 @@ namespace eq6_Simulation2
             mEmployeeID = pEmployeeID;
 
             InitializeComponent();
-            lblTitle.Text = "Bonjour, " + EmployeeDAL.GetUsernameByID(mEmployeeID) + " !"; 
+            lblTitle.Text = "Bonjour, " + EmployeeDAL.GetUsernameByID(mEmployeeID) + " !";
+
+            FillListView(); 
         }
 
         private void btnBeginCalls_Click(object sender, EventArgs e)
         {
-            PhoneClients form = new PhoneClients();
-            form.Show();
+            PhoneClients leTemp = new PhoneClients();
+            leTemp.ShowDialog();
         }
-
         #region Methodes
+        public void FillListView()
+        {
+            IEnumerable<Survey> iSurveys = SurveyDAL.Current.GetAll();
+
+            foreach (Survey survey in iSurveys)
+            {
+                Company c = CompanyDAL.Current.DB.FirstOrDefault<Company>("WHERE ID=@0", survey.CompanyID);
+                
+                ListViewItem listItem = new ListViewItem(c.Name);
+                listItem.SubItems.Add(survey.DateStart.ToShortDateString());
+                listItem.SubItems.Add(survey.DateEnd.ToShortDateString()); 
+                lsvSurveys.Items.Add(listItem);
+            }
+        }
         #endregion 
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

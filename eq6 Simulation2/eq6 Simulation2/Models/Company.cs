@@ -18,5 +18,8 @@ namespace LUJR.Models
         public int AddressID { get; set; }
     }
 
-    public class CompanyDAL : PetaPocoDAL<Company> { }
+    public class CompanyDAL : PetaPocoDAL<Company> 
+    { 
+
+    }
 }
