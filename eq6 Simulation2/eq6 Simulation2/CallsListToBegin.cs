@@ -26,7 +26,7 @@ namespace eq6_Simulation2
 
         private void btnBeginCalls_Click(object sender, EventArgs e)
         {
-            PhoneClients leTemp = new PhoneClients();
+            PhoneClients leTemp = new PhoneClients(mEmployeeID);
             leTemp.ShowDialog(this);
         }
         #region Methodes
