@@ -148,6 +148,11 @@ namespace eq6_Simulation2
             btnHappy.FlatAppearance.BorderColor = Color.DarkBlue;
             btnHappy.FlatAppearance.BorderSize = 2;
         }
+
+        private void PhoneClients_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Close();
+        }
        
 
         

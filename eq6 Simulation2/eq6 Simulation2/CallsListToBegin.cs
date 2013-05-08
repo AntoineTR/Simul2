@@ -27,7 +27,7 @@ namespace eq6_Simulation2
         private void btnBeginCalls_Click(object sender, EventArgs e)
         {
             PhoneClients leTemp = new PhoneClients();
-            leTemp.ShowDialog();
+            leTemp.ShowDialog(this);
         }
         #region Methodes
         public void FillListView()
@@ -48,7 +48,12 @@ namespace eq6_Simulation2
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Owner.Close();
+        }
+
+        private void CallsListToBegin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Close();
         }
     }
 }

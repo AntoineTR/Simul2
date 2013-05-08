@@ -274,7 +274,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(656, 620);
             this.Name = "PhoneClients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "{nom du client}";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhoneClients_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
