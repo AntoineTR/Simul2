@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LUJR.Helpers; 
+using LUJR.Helpers;
 
-namespace eq6_Simulation2.Models
+namespace LUJR.Models
 {
     [TableName("Baboubine.Person")]
     [PrimaryKey("ID")]

@@ -46,5 +46,13 @@ namespace LUJR.Models
                 return 0;
             }
         }
+        public static string GetUsernameByID(int pID)
+        {
+            Employee e = Current.DB.FirstOrDefault<Employee>("WHERE ID=@0", pID);
+            int personID = e.PersonID;
+
+            Person p = PersonDAL.Current.DB.FirstOrDefault<Person>("WHERE ID=@0", personID);
+            return p.FirstName + " " + p.LastName; 
+        }
     }
 }

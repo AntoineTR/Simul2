@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LUJR.Helpers; 
+using LUJR.Helpers;
 
-namespace eq6_Simulation2.Models
+namespace LUJR.Models
 {
     [TableName("Baboubine.Language")]
     [PrimaryKey("ID")]
-    public class Language
+    public class Language : EntityWithDatabase
     {
-        // To do...
+        public Language() : base() { }
+
+        public int ID { get; set; }
+        public string Name { get; set; }
     }
+
+    public class LanguageDAL : PetaPocoDAL<Language> { }
 }

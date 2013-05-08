@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using LUJR.Models;
 
 namespace eq6_Simulation2
 {
@@ -16,7 +17,9 @@ namespace eq6_Simulation2
         public CallsListToBegin(int pEmployeeID)
         {
             mEmployeeID = pEmployeeID;
+
             InitializeComponent();
+            lblTitle.Text = EmployeeDAL.GetUsernameByID(mEmployeeID); 
         }
 
         private void btnBeginCalls_Click(object sender, EventArgs e)
@@ -25,5 +28,7 @@ namespace eq6_Simulation2
             leTemp.Show();
 
         }
+        #region Methodes
+        #endregion 
     }
 }
