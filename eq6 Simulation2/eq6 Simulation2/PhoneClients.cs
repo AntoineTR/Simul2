@@ -19,8 +19,9 @@ namespace eq6_Simulation2
         public PhoneClients()
         {
             InitializeComponent();
-            lblLang.Text = ci.Name;
+            lblLang.Text = ci.DisplayName;
             lblTimer.Text = i.ToString();
+            tmrCall.Start();
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -57,11 +58,13 @@ namespace eq6_Simulation2
             if (mPaused)
             {
                 mPaused = false;
+                tmrCall.Start();
                 btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\pause.png");
             }
             else 
             {
                 mPaused = true;
+                tmrCall.Stop();
                 btnPause.Image = Image.FromFile(Path.GetDirectoryName(Application.ExecutablePath) + @"\Images\play.png");            
             }
         }
@@ -69,7 +72,7 @@ namespace eq6_Simulation2
         private void tmrAppel_Tick(object sender, EventArgs e)
         {
             i += 1;
-            lblTimer.Text = i.ToString();
+            lblTimer.Text = String.Format("{0:00}", i / 60) + ":" + String.Format("{0:00}", i % 60);
         }
 
     }
