@@ -181,7 +181,7 @@ namespace eq6_Simulation2
         }
         private void PhoneClients_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Owner.Close();
+            //this.Close();
         }
         #endregion Events
     }

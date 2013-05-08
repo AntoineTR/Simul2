@@ -48,12 +48,12 @@ namespace eq6_Simulation2
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Owner.Close();
+            this.Close();
         }
 
-        private void CallsListToBegin_FormClosing(object sender, FormClosingEventArgs e)
+        private void CallsListToBegin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Owner.Close();
+            this.Owner.Show();
         }
     }
 }

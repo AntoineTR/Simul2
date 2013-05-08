@@ -141,7 +141,7 @@
             this.Name = "CallsListToBegin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Commencer les appels";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallsListToBegin_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CallsListToBegin_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
