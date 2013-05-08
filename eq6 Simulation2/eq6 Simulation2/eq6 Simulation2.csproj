@@ -76,6 +76,9 @@
     <EmbeddedResource Include="CallsListToBegin.resx">
       <DependentUpon>CallsListToBegin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhoneClients.resx">
       <DependentUpon>PhoneClients.cs</DependentUpon>
       <SubType>Designer</SubType>

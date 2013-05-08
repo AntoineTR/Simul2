@@ -11,8 +11,11 @@ namespace eq6_Simulation2
 {
     public partial class CallsListToBegin : Form
     {
-        public CallsListToBegin()
+        private int mEmployeeID = 0;
+
+        public CallsListToBegin(int pEmployeeID)
         {
+            mEmployeeID = pEmployeeID;
             InitializeComponent();
         }
     }
