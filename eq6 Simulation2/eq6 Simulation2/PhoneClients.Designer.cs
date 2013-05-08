@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneClients));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNext = new System.Windows.Forms.Button();
@@ -43,8 +44,11 @@
             this.btnUnhappy = new System.Windows.Forms.Button();
             this.btnHappy = new System.Windows.Forms.Button();
             this.grbConversation = new System.Windows.Forms.GroupBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.txtText = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblLang = new System.Windows.Forms.Label();
+            this.tmrCall = new System.Windows.Forms.Timer(this.components);
+            this.lblTimer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpSatisfaction.SuspendLayout();
             this.grbConversation.SuspendLayout();
@@ -54,14 +58,17 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.lblTimer);
+            this.panel1.Controls.Add(this.lblLang);
             this.panel1.Controls.Add(this.btnNext);
             this.panel1.Controls.Add(this.btnPause);
             this.panel1.Controls.Add(this.grpSatisfaction);
             this.panel1.Controls.Add(this.grbConversation);
             this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(24, 23);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(621, 625);
+            this.panel1.Size = new System.Drawing.Size(1242, 1202);
             this.panel1.TabIndex = 0;
             // 
             // btnNext
@@ -69,9 +76,10 @@
             this.btnNext.BackColor = System.Drawing.Color.White;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(111, 536);
+            this.btnNext.Location = new System.Drawing.Point(222, 1031);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(482, 63);
+            this.btnNext.Size = new System.Drawing.Size(964, 121);
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = "Next client";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -81,9 +89,10 @@
             this.btnPause.BackColor = System.Drawing.Color.White;
             this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPause.Image = ((System.Drawing.Image)(resources.GetObject("btnPause.Image")));
-            this.btnPause.Location = new System.Drawing.Point(30, 536);
+            this.btnPause.Location = new System.Drawing.Point(60, 1031);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(63, 63);
+            this.btnPause.Size = new System.Drawing.Size(126, 121);
             this.btnPause.TabIndex = 6;
             this.btnPause.UseVisualStyleBackColor = false;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
@@ -99,9 +108,11 @@
             this.grpSatisfaction.Controls.Add(this.btnNeutral);
             this.grpSatisfaction.Controls.Add(this.btnUnhappy);
             this.grpSatisfaction.Controls.Add(this.btnHappy);
-            this.grpSatisfaction.Location = new System.Drawing.Point(20, 207);
+            this.grpSatisfaction.Location = new System.Drawing.Point(40, 398);
+            this.grpSatisfaction.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grpSatisfaction.Name = "grpSatisfaction";
-            this.grpSatisfaction.Size = new System.Drawing.Size(584, 311);
+            this.grpSatisfaction.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grpSatisfaction.Size = new System.Drawing.Size(1168, 598);
             this.grpSatisfaction.TabIndex = 2;
             this.grpSatisfaction.TabStop = false;
             this.grpSatisfaction.Text = "Satisfaction du consommateur";
@@ -109,45 +120,50 @@
             // rtbComment
             // 
             this.rtbComment.Enabled = false;
-            this.rtbComment.Location = new System.Drawing.Point(10, 178);
+            this.rtbComment.Location = new System.Drawing.Point(20, 342);
+            this.rtbComment.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rtbComment.Name = "rtbComment";
-            this.rtbComment.Size = new System.Drawing.Size(563, 120);
+            this.rtbComment.Size = new System.Drawing.Size(1122, 227);
             this.rtbComment.TabIndex = 7;
             this.rtbComment.Text = "";
             // 
             // lblF4
             // 
             this.lblF4.AutoSize = true;
-            this.lblF4.Location = new System.Drawing.Point(501, 149);
+            this.lblF4.Location = new System.Drawing.Point(1002, 287);
+            this.lblF4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblF4.Name = "lblF4";
-            this.lblF4.Size = new System.Drawing.Size(19, 13);
+            this.lblF4.Size = new System.Drawing.Size(37, 26);
             this.lblF4.TabIndex = 7;
             this.lblF4.Text = "F4";
             // 
             // lblF3
             // 
             this.lblF3.AutoSize = true;
-            this.lblF3.Location = new System.Drawing.Point(355, 150);
+            this.lblF3.Location = new System.Drawing.Point(710, 288);
+            this.lblF3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblF3.Name = "lblF3";
-            this.lblF3.Size = new System.Drawing.Size(19, 13);
+            this.lblF3.Size = new System.Drawing.Size(37, 26);
             this.lblF3.TabIndex = 6;
             this.lblF3.Text = "F3";
             // 
             // lblF2
             // 
             this.lblF2.AutoSize = true;
-            this.lblF2.Location = new System.Drawing.Point(208, 150);
+            this.lblF2.Location = new System.Drawing.Point(416, 288);
+            this.lblF2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblF2.Name = "lblF2";
-            this.lblF2.Size = new System.Drawing.Size(19, 13);
+            this.lblF2.Size = new System.Drawing.Size(37, 26);
             this.lblF2.TabIndex = 5;
             this.lblF2.Text = "F3";
             // 
             // lblF1
             // 
             this.lblF1.AutoSize = true;
-            this.lblF1.Location = new System.Drawing.Point(62, 150);
+            this.lblF1.Location = new System.Drawing.Point(124, 288);
+            this.lblF1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblF1.Name = "lblF1";
-            this.lblF1.Size = new System.Drawing.Size(19, 13);
+            this.lblF1.Size = new System.Drawing.Size(37, 26);
             this.lblF1.TabIndex = 4;
             this.lblF1.Text = "F1";
             // 
@@ -157,9 +173,10 @@
             this.btnNoAnswer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNoAnswer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNoAnswer.Image = ((System.Drawing.Image)(resources.GetObject("btnNoAnswer.Image")));
-            this.btnNoAnswer.Location = new System.Drawing.Point(447, 19);
+            this.btnNoAnswer.Location = new System.Drawing.Point(894, 37);
+            this.btnNoAnswer.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNoAnswer.Name = "btnNoAnswer";
-            this.btnNoAnswer.Size = new System.Drawing.Size(127, 127);
+            this.btnNoAnswer.Size = new System.Drawing.Size(254, 244);
             this.btnNoAnswer.TabIndex = 4;
             this.btnNoAnswer.UseVisualStyleBackColor = false;
             this.btnNoAnswer.Click += new System.EventHandler(this.btnSelected);
@@ -170,9 +187,10 @@
             this.btnNeutral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNeutral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNeutral.Image = ((System.Drawing.Image)(resources.GetObject("btnNeutral.Image")));
-            this.btnNeutral.Location = new System.Drawing.Point(301, 20);
+            this.btnNeutral.Location = new System.Drawing.Point(602, 38);
+            this.btnNeutral.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNeutral.Name = "btnNeutral";
-            this.btnNeutral.Size = new System.Drawing.Size(127, 127);
+            this.btnNeutral.Size = new System.Drawing.Size(254, 244);
             this.btnNeutral.TabIndex = 3;
             this.btnNeutral.UseVisualStyleBackColor = false;
             this.btnNeutral.Click += new System.EventHandler(this.btnSelected);
@@ -183,9 +201,10 @@
             this.btnUnhappy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnUnhappy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnhappy.Image = ((System.Drawing.Image)(resources.GetObject("btnUnhappy.Image")));
-            this.btnUnhappy.Location = new System.Drawing.Point(154, 20);
+            this.btnUnhappy.Location = new System.Drawing.Point(308, 38);
+            this.btnUnhappy.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUnhappy.Name = "btnUnhappy";
-            this.btnUnhappy.Size = new System.Drawing.Size(127, 127);
+            this.btnUnhappy.Size = new System.Drawing.Size(254, 244);
             this.btnUnhappy.TabIndex = 2;
             this.btnUnhappy.UseVisualStyleBackColor = false;
             this.btnUnhappy.Click += new System.EventHandler(this.btnUnhappy_Click);
@@ -196,9 +215,10 @@
             this.btnHappy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnHappy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHappy.Image = ((System.Drawing.Image)(resources.GetObject("btnHappy.Image")));
-            this.btnHappy.Location = new System.Drawing.Point(7, 20);
+            this.btnHappy.Location = new System.Drawing.Point(14, 38);
+            this.btnHappy.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnHappy.Name = "btnHappy";
-            this.btnHappy.Size = new System.Drawing.Size(127, 127);
+            this.btnHappy.Size = new System.Drawing.Size(254, 244);
             this.btnHappy.TabIndex = 1;
             this.btnHappy.UseVisualStyleBackColor = false;
             this.btnHappy.Click += new System.EventHandler(this.btnSelected);
@@ -206,43 +226,68 @@
             // grbConversation
             // 
             this.grbConversation.Controls.Add(this.txtText);
-            this.grbConversation.Location = new System.Drawing.Point(20, 66);
+            this.grbConversation.Location = new System.Drawing.Point(40, 127);
+            this.grbConversation.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grbConversation.Name = "grbConversation";
-            this.grbConversation.Size = new System.Drawing.Size(584, 134);
+            this.grbConversation.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grbConversation.Size = new System.Drawing.Size(1168, 258);
             this.grbConversation.TabIndex = 1;
             this.grbConversation.TabStop = false;
             this.grbConversation.Text = "Conversation avec le consommateur";
+            // 
+            // txtText
+            // 
+            this.txtText.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtText.Location = new System.Drawing.Point(14, 38);
+            this.txtText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtText.Multiline = true;
+            this.txtText.Name = "txtText";
+            this.txtText.ReadOnly = true;
+            this.txtText.Size = new System.Drawing.Size(1128, 189);
+            this.txtText.TabIndex = 0;
+            this.txtText.TabStop = false;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(14, 11);
+            this.lblTitle.Location = new System.Drawing.Point(28, 21);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(250, 35);
+            this.lblTitle.Size = new System.Drawing.Size(500, 71);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "{nom du client}";
             // 
-            // txtText
+            // lblLang
             // 
-            this.txtText.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtText.Location = new System.Drawing.Point(7, 20);
-            this.txtText.Multiline = true;
-            this.txtText.Name = "txtText";
-            this.txtText.ReadOnly = true;
-            this.txtText.Size = new System.Drawing.Size(566, 100);
-            this.txtText.TabIndex = 0;
-            this.txtText.TabStop = false;
+            this.lblLang.AutoSize = true;
+            this.lblLang.Location = new System.Drawing.Point(3, 1176);
+            this.lblLang.Name = "lblLang";
+            this.lblLang.Size = new System.Drawing.Size(0, 26);
+            this.lblLang.TabIndex = 7;
+            // 
+            // tmrCall
+            // 
+            this.tmrCall.Tick += new System.EventHandler(this.tmrAppel_Tick);
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(1169, 1176);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(0, 26);
+            this.lblTimer.TabIndex = 8;
             // 
             // PhoneClients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(645, 649);
+            this.ClientSize = new System.Drawing.Size(1290, 1248);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(661, 688);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinimumSize = new System.Drawing.Size(1296, 1258);
             this.Name = "PhoneClients";
             this.Text = "{nom du client}";
             this.Load += new System.EventHandler(this.Form_Load);
@@ -274,6 +319,9 @@
         private System.Windows.Forms.Label lblF1;
         private System.Windows.Forms.Button btnNoAnswer;
         private System.Windows.Forms.TextBox txtText;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Label lblLang;
+        private System.Windows.Forms.Timer tmrCall;
     }
 }
 
