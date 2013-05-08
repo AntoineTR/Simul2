@@ -55,6 +55,13 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="CallsListToBegin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CallsListToBegin.Designer.cs">
+      <DependentUpon>CallsListToBegin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="PhoneClients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,9 @@
     <Compile Include="Helpers\PetaPocoDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CallsListToBegin.resx">
+      <DependentUpon>CallsListToBegin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhoneClients.resx">
       <DependentUpon>PhoneClients.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +90,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="Images\.DS_Store" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,8 +101,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Content Include="Images\happy.png" />
+    <Content Include="Images\neutral.png" />
+    <Content Include="Images\pause.png" />
+    <Content Include="Images\phone.png" />
+    <Content Include="Images\Play.png" />
+    <Content Include="Images\sad.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\happy.png" />

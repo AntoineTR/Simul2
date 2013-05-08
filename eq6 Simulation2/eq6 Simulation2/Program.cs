@@ -15,7 +15,7 @@ namespace eq6_Simulation2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PhoneClients());
+            Application.Run(new CallsListToBegin());
         }
     }
 }
