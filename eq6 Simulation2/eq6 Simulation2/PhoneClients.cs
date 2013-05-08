@@ -94,13 +94,14 @@ namespace eq6_Simulation2
             tDA.AddParam("@CallID", mCurrentCallID);
             tDA.AddParam("@AnswerID", mLastAnswerClicked);
             tDA.AddParam("@CallLength", mCallTimer);
-            tDA.AddParam("@Comments", rtbComment.Text.Trim());
+            tDA.AddParam("@Comments", rtbComment.Text.Trim() == "Commentaires..." ? "" : rtbComment.Text.Trim());
             
             tDA.Execute();
 
             tDA.Dispose();
 
             mCallTimer = 0;
+            mLastAnswerClicked = 0;
             ClearFlat();
         }
         public void nextCall() 
@@ -177,7 +178,7 @@ namespace eq6_Simulation2
             ClearFlat();
             btnNeutral.FlatAppearance.BorderColor = Color.DarkBlue;
             btnNeutral.FlatAppearance.BorderSize = 3;
-            mLastAnswerClicked = 3;
+            mLastAnswerClicked = 4;
         }
         private void btnNoAnswer_Click(object sender, EventArgs e)
         {
@@ -187,7 +188,7 @@ namespace eq6_Simulation2
             ClearFlat();
             btnNoAnswer.FlatAppearance.BorderColor = Color.DarkBlue;
             btnNoAnswer.FlatAppearance.BorderSize = 3;
-            mLastAnswerClicked = 4;
+            mLastAnswerClicked = 3;
         }
 
         private void btns_KeyUp(object sender, KeyEventArgs e)

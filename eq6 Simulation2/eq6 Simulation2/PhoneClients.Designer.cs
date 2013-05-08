@@ -282,6 +282,7 @@
             this.Text = "{nom du client}";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhoneClients_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btns_KeyUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.grpSatisfaction.ResumeLayout(false);
