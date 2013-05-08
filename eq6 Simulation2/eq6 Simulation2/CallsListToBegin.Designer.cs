@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBeginCalls = new System.Windows.Forms.Button();
             this.Telephone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prénom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Produit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Vendeur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Langue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBeginCalls = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
@@ -59,6 +59,36 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Telephone
+            // 
+            this.Telephone.Text = "No. de téléphone";
+            this.Telephone.Width = 103;
+            // 
+            // Prénom
+            // 
+            this.Prénom.Text = "Prénom";
+            this.Prénom.Width = 104;
+            // 
+            // Nom
+            // 
+            this.Nom.Text = "Nom";
+            this.Nom.Width = 91;
+            // 
+            // Produit
+            // 
+            this.Produit.Text = "Produit Acheté";
+            this.Produit.Width = 150;
+            // 
+            // Vendeur
+            // 
+            this.Vendeur.Text = "Vendeur";
+            this.Vendeur.Width = 99;
+            // 
+            // Langue
+            // 
+            this.Langue.Text = "Langue";
+            this.Langue.Width = 68;
             // 
             // lblTitle
             // 
@@ -92,36 +122,7 @@
             this.btnBeginCalls.TabIndex = 6;
             this.btnBeginCalls.Text = "Commencer les appels";
             this.btnBeginCalls.UseVisualStyleBackColor = false;
-            // 
-            // Telephone
-            // 
-            this.Telephone.Text = "No. de téléphone";
-            this.Telephone.Width = 103;
-            // 
-            // Prénom
-            // 
-            this.Prénom.Text = "Prénom";
-            this.Prénom.Width = 104;
-            // 
-            // Nom
-            // 
-            this.Nom.Text = "Nom";
-            this.Nom.Width = 91;
-            // 
-            // Produit
-            // 
-            this.Produit.Text = "Produit Acheté";
-            this.Produit.Width = 150;
-            // 
-            // Vendeur
-            // 
-            this.Vendeur.Text = "Vendeur";
-            this.Vendeur.Width = 99;
-            // 
-            // Langue
-            // 
-            this.Langue.Text = "Langue";
-            this.Langue.Width = 68;
+            this.btnBeginCalls.Click += new System.EventHandler(this.btnBeginCalls_Click);
             // 
             // button1
             // 

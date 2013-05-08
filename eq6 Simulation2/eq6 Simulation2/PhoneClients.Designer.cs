@@ -164,7 +164,7 @@
             this.lblF2.Name = "lblF2";
             this.lblF2.Size = new System.Drawing.Size(19, 13);
             this.lblF2.TabIndex = 5;
-            this.lblF2.Text = "F3";
+            this.lblF2.Text = "F2";
             // 
             // lblF1
             // 
@@ -186,7 +186,7 @@
             this.btnNoAnswer.Size = new System.Drawing.Size(127, 127);
             this.btnNoAnswer.TabIndex = 4;
             this.btnNoAnswer.UseVisualStyleBackColor = false;
-            this.btnNoAnswer.Click += new System.EventHandler(this.btnSelected);
+            this.btnNoAnswer.Click += new System.EventHandler(this.btnNoAnswer_Click);
             // 
             // btnNeutral
             // 
@@ -225,7 +225,7 @@
             this.btnHappy.Size = new System.Drawing.Size(127, 127);
             this.btnHappy.TabIndex = 1;
             this.btnHappy.UseVisualStyleBackColor = false;
-            this.btnHappy.Click += new System.EventHandler(this.btnSelected);
+            this.btnHappy.Click += new System.EventHandler(this.btnHappy_Click);
             this.btnHappy.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnHappy_KeyUp);
             // 
             // grbConversation

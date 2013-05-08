@@ -22,6 +22,7 @@ namespace eq6_Simulation2
             lblLang.Text = ci.DisplayName;
             lblTimer.Text = i.ToString();
             tmrCall.Start();
+            
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -46,7 +47,9 @@ namespace eq6_Simulation2
             rtbComment.Enabled = true;
             rtbComment.BackColor = Color.White;
             rtbComment.Focus();
-
+            ClearFlat();
+                btnUnhappy.FlatAppearance.BorderColor = Color.DarkBlue;
+                btnUnhappy.FlatAppearance.BorderSize = 2;
             rtbComment.Text = ""; 
         }
 
@@ -55,6 +58,10 @@ namespace eq6_Simulation2
             rtbComment.Enabled = false;
             rtbComment.BackColor = Color.Gainsboro;
             btnNext.Focus();
+            
+            ClearFlat();
+            btnNeutral.FlatAppearance.BorderColor = Color.DarkBlue;
+            btnNeutral.FlatAppearance.BorderSize = 2;
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -82,11 +89,68 @@ namespace eq6_Simulation2
 
         private void btnHappy_KeyUp(object sender, KeyEventArgs e)
         {
+            MapFsUP(e);    
+        }
+
+
+
+        private void MapFsUP(KeyEventArgs e){
             if (e.KeyData == Keys.F1)
             {
-                int dfsdf = 34;
+                btnHappy.PerformClick();
+                
             }
+            if (e.KeyData == Keys.F2)
+            {
+                btnUnhappy.PerformClick();
+                
+            }
+            if (e.KeyData == Keys.F3)
+            {
+                btnNeutral.PerformClick();
+                
+            }
+            if (e.KeyData == Keys.F4)
+            {
+                btnNoAnswer.PerformClick();
+                
+            }
+        
         }
+        private void ClearFlat(){
+            btnNoAnswer.FlatAppearance.BorderColor = Color.Black;
+            btnNoAnswer.FlatAppearance.BorderSize = 1;
+            btnHappy.FlatAppearance.BorderColor = Color.Black;
+            btnHappy.FlatAppearance.BorderSize = 1;
+            btnUnhappy.FlatAppearance.BorderColor = Color.Black;
+            btnUnhappy.FlatAppearance.BorderSize = 1;
+            btnNeutral.FlatAppearance.BorderColor = Color.Black;
+            btnNeutral.FlatAppearance.BorderSize = 1;
+
+        }
+
+        private void btnNoAnswer_Click(object sender, EventArgs e)
+        {
+            rtbComment.Enabled = false;
+            rtbComment.BackColor = Color.Gainsboro;
+            btnNext.Focus();
+            ClearFlat();
+            btnNoAnswer.FlatAppearance.BorderColor = Color.DarkBlue;
+            btnNoAnswer.FlatAppearance.BorderSize = 2;
+        }
+
+        private void btnHappy_Click(object sender, EventArgs e)
+        {
+            rtbComment.Enabled = false;
+            rtbComment.BackColor = Color.Gainsboro;
+            btnNext.Focus();
+            ClearFlat();
+            btnHappy.FlatAppearance.BorderColor = Color.DarkBlue;
+            btnHappy.FlatAppearance.BorderSize = 2;
+        }
+       
+
+        
 
     }
 }

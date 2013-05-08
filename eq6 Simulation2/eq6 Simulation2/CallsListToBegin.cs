@@ -18,5 +18,12 @@ namespace eq6_Simulation2
             mEmployeeID = pEmployeeID;
             InitializeComponent();
         }
+
+        private void btnBeginCalls_Click(object sender, EventArgs e)
+        {
+            PhoneClients leTemp = new PhoneClients();
+            leTemp.Show();
+
+        }
     }
 }
