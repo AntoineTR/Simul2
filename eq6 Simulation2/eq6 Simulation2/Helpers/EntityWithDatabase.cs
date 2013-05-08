@@ -12,7 +12,7 @@ namespace LUJR.Helpers
 
         public EntityWithDatabase()
         {
-            DB = new Database("Default");
+            DB = new Database("defaut");
         }
     }
 

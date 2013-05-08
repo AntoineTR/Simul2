@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.Telephone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Prénom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Produit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Vendeur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Langue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Compagnie = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateDebut = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateFin = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NbClients = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBeginCalls = new System.Windows.Forms.Button();
@@ -47,12 +45,10 @@
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Telephone,
-            this.Prénom,
-            this.Nom,
-            this.Produit,
-            this.Vendeur,
-            this.Langue});
+            this.Compagnie,
+            this.DateDebut,
+            this.DateFin,
+            this.NbClients});
             this.listView1.Location = new System.Drawing.Point(14, 24);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(575, 432);
@@ -60,35 +56,25 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // Telephone
+            // Compagnie
             // 
-            this.Telephone.Text = "No. de téléphone";
-            this.Telephone.Width = 103;
+            this.Compagnie.Text = "Compagnie";
+            this.Compagnie.Width = 196;
             // 
-            // Prénom
+            // DateDebut
             // 
-            this.Prénom.Text = "Prénom";
-            this.Prénom.Width = 104;
+            this.DateDebut.Text = "Date Début";
+            this.DateDebut.Width = 104;
             // 
-            // Nom
+            // DateFin
             // 
-            this.Nom.Text = "Nom";
-            this.Nom.Width = 91;
+            this.DateFin.Text = "Date Fin";
+            this.DateFin.Width = 91;
             // 
-            // Produit
+            // NbClients
             // 
-            this.Produit.Text = "Produit Acheté";
-            this.Produit.Width = 150;
-            // 
-            // Vendeur
-            // 
-            this.Vendeur.Text = "Vendeur";
-            this.Vendeur.Width = 99;
-            // 
-            // Langue
-            // 
-            this.Langue.Text = "Langue";
-            this.Langue.Width = 68;
+            this.NbClients.Text = "Nombre de clients à appeler";
+            this.NbClients.Width = 180;
             // 
             // lblTitle
             // 
@@ -109,7 +95,7 @@
             this.groupBox1.Size = new System.Drawing.Size(598, 474);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Liste des clients à appeler";
+            this.groupBox1.Text = "Liste des sondages";
             // 
             // btnBeginCalls
             // 
@@ -172,12 +158,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ColumnHeader Telephone;
-        private System.Windows.Forms.ColumnHeader Prénom;
-        private System.Windows.Forms.ColumnHeader Nom;
-        private System.Windows.Forms.ColumnHeader Produit;
-        private System.Windows.Forms.ColumnHeader Vendeur;
-        private System.Windows.Forms.ColumnHeader Langue;
+        private System.Windows.Forms.ColumnHeader Compagnie;
+        private System.Windows.Forms.ColumnHeader DateDebut;
+        private System.Windows.Forms.ColumnHeader DateFin;
+        private System.Windows.Forms.ColumnHeader NbClients;
         private System.Windows.Forms.Button btnBeginCalls;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;

@@ -19,15 +19,15 @@ namespace eq6_Simulation2
             mEmployeeID = pEmployeeID;
 
             InitializeComponent();
-            lblTitle.Text = EmployeeDAL.GetUsernameByID(mEmployeeID); 
+            lblTitle.Text = "Bonjour, " + EmployeeDAL.GetUsernameByID(mEmployeeID) + " !"; 
         }
 
         private void btnBeginCalls_Click(object sender, EventArgs e)
         {
-            PhoneClients leTemp = new PhoneClients();
-            leTemp.Show();
-
+            PhoneClients form = new PhoneClients();
+            form.Show();
         }
+
         #region Methodes
         #endregion 
     }
